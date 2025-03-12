@@ -1,0 +1,15 @@
+.h1-Momo{
+    color: white;
+    background-color: black;
+    font-size: 10px;
+}
+
+.imagen-Momo{
+    width: 50px;/*ancho*/
+    height: 50px;/*alto*/
+}
+
+.contenedor-flexible{
+    display: flex;
+
+}
