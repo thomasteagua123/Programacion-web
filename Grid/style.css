@@ -17,6 +17,7 @@ body{
 } 
 .pika:hover{
     transform: translateY(10px);
+    cursor: pointer;
 }
 
 .char{
@@ -29,6 +30,7 @@ body{
 }
 .char:hover{
     transform: translateY(10px);
+    cursor: pointer;
 }
 
 .mew{
@@ -41,7 +43,9 @@ body{
 }
 .mew:hover{
     transform: translateY(10px);
+    cursor: pointer;
 }
+
 
 header{
     display: flex;
