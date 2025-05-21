@@ -33,11 +33,21 @@ const asyncFunction = async () => {
   try {
     const response = await fetch("https://rickandmortyapi.com/api/character");
     const data = await response.json();
+    const arrayFilt = data.results.filter((objetito) => objetito.id === 1);
+    console.log(arrayFilt);
+
+    const nuevoNombre = data.results.map((cambio, index) => {
+      if (cambio.name === "Rick Sanchez") {
+        const nombre = "Thomas Avila";
+        return nombre;
+      }
+    });
+    console.log("nuevoNombre", nuevoNombre);
     console.log("data", data);
   } catch (error) {
     console.log("error", error);
   }
 };
 asyncFunction(); //para ejecutar una funcion debemos llamarla con Variable();
-// funcion regular asincrona
-async function asyncFunc() {}
+// // funcion regular asincrona
+// async function asyncFunc() {}
