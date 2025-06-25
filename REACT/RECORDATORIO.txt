@@ -1,3 +1,5 @@
+nmp i instala node_modules
+
 Los componentes cuando se declaran, siempre arrancan con mayuscula y siempre retornan estetica. 
 Ejemplo: "Mybutton"
 
@@ -34,3 +36,7 @@ el valor inicial es lo que creo con lo que va a empezar, int, str o list.
 con el setCharacters va actualizando el useState.
 siempre usar el mismo nombre que al principio del const, ejemplo:
 const [Nombre, setNombre] = useState([] O "" O 0)
+
+Siempre el nombre 
+
+cuando pasemos una funcion dentro del boton, se hace sin parentesis, ejemplo: onclick={nombreVariable}
