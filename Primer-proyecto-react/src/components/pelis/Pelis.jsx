@@ -1,25 +1,16 @@
 import { useState, useEffect } from "react";
 
 export function RickMorty() {
-  const [characters, setCharacters] = useState([]);
+  const [characters, setCharacters] = useState({});
   //     Variable   FuncAct.         valor Inicial
   // el useEffect va a ejecutar el codigo qure se encuentra dentro
   // tantas veces como se actualicen sus dependencias
   // si no hay dependencias se ejecuta solo antes del primer
   // renderizado
   useEffect(() => {
-    fetch("https://rickandmortyapi.com/api/character")
+    fetch("http://www.omdbapi.com/?i=tt3896198&apikey=e67b0040")
       .then((data) => data.json())
-      .then((response) => setCharacters(response.results));
+      .then((response) => console.log(response.Ratings));
   }, []);
-
-  return (
-    <>
-      {characters ? (
-        characters.map((item, index) => <p>{item.Source}</p>)
-      ) : (
-        <> Cargando...</>
-      )}
-    </>
-  );
+  return <>{characters ? characters.Source : <> Cargando...</>}</>;
 }

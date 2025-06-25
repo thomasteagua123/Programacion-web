@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import { Pelis } from "./components/pelis/Pelis";
 
 function App() {
   const [nombre, setNombre] =
@@ -23,6 +24,7 @@ function App() {
       {/* /*Si nombre es igual a str vacio
       print Hola, sino chau */}
       {nombre === "" ? <> Hola</> : <>chau</>}
+      <Pelis />
     </>
   );
 }
