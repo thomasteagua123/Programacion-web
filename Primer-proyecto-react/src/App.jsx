@@ -1,34 +1,29 @@
+import { useState } from "react";
 import "./App.css";
-import Usuario from "./components/usuario/Usuario";
-import { Proveedor } from "./components/proveedor/Proveedor";
-import { useEffect, useState } from "react";
 
 function App() {
-  const [characters, setCharacters] = useState([]);
-  //     Variable   FuncAct.         valor Inicial
-  // el useEffect va a ejecutar el codigo qure se encuentra dentro
-  // tantas veces como se actualicen sus dependencias
-  // si no hay dependencias se ejecuta solo antes del primer
-  // renderizado
-  useEffect(() => {
-    fetch("https://rickandmortyapi.com/api/character")
-      .then((data) => data.json())
-      .then((response) => setCharacters(response.results));
-  }, []);
-
+  const [nombre, setNombre] =
+    useState(""); /*Hace que el valor de nombre sea un str vacio */
+  const handleClick = () => {
+    console.log(nombre); /*Muestra nombre cuando se hace click */
+  };
+  const handleInputChange = (event) => {
+    setNombre(event.target.value); /*Toma el valor de event dentro del input */
+  };
   return (
     <>
-      {characters ? (
-        characters.map((item, index) => <p>{item.name}</p>)
-      ) : (
-        <> Cargando...</>
-      )}
-      Hola Mundo
-      <button>Soy un boton</button>
-      <Usuario />
-      <Proveedor name={"Pepe"} />
+      <input
+        type="text"
+        placeholder="Escribi tu nombre"
+        onChange={handleInputChange}
+        value={nombre}
+      />
+      <button onClick={handleClick}>Mostrar</button>
+      {nombre && <h2>{nombre}</h2>}
+      {/* /*Si nombre es igual a str vacio
+      print Hola, sino chau */}
+      {nombre === "" ? <> Hola</> : <>chau</>}
     </>
   );
 }
-
 export default App;
