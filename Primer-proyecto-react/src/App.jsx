@@ -1,30 +1,23 @@
-import { useState } from "react";
 import "./App.css";
-import { Pelis } from "./components/pelis/Pelis";
+import { Contador } from "./components/contador/Contador";
+import { EfectoM } from "./components/EfectoMontar/efect";
+import { Mostrador } from "./components/mostrador/Mostrador";
+import { Cargador } from "./components/cargar/Cargar";
+import { TodoJunto } from "./components/todoJunto/TodoJunto";
 
 function App() {
-  const [nombre, setNombre] =
-    useState(""); /*Hace que el valor de nombre sea un str vacio */
-  const handleClick = () => {
-    console.log(nombre); /*Muestra nombre cuando se hace click */
-  };
-  const handleInputChange = (event) => {
-    setNombre(event.target.value); /*Toma el valor de event dentro del input */
-  };
+
   return (
     <>
-      <input
-        type="text"
-        placeholder="Escribi tu nombre"
-        onChange={handleInputChange}
-        value={nombre}
-      />
-      <button onClick={handleClick}>Mostrar</button>
-      {nombre && <h2>{nombre}</h2>}
-      {/* /*Si nombre es igual a str vacio
-      print Hola, sino chau */}
-      {nombre === "" ? <> Hola</> : <>chau</>}
-      <Pelis />
+    <Contador/>
+    <br />
+  <Mostrador />
+  <br />
+  <EfectoM/>
+  <br />
+  <Cargador/>
+  <br />
+  <TodoJunto/>
     </>
   );
 }
