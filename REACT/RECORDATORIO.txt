@@ -40,3 +40,9 @@ const [Nombre, setNombre] = useState([] O "" O 0)
 Siempre el nombre 
 
 cuando pasemos una funcion dentro del boton, se hace sin parentesis, ejemplo: onclick={nombreVariable}
+
+los componentes van a devolver interfaces
+
+El useEffect va a ejecutarse 1 vez o las veces que sea
+
+el provider es compartir datos a cada componente del jsx
